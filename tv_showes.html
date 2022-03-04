@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My shows</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<Style>
+    html{
+        height: 100%;
+        margin: 0;
+    }
+
+    body{
+        overflow: hidden;
+        position: relative;
+        padding: 40px;
+        margin: 0;
+        background-color: #fffefe;
+        color: #FF0075;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        height: 100%;
+    }
+    h2{
+        margin-bottom: 30px;
+        font-size: 30px;
+        text-decoration: underline;
+        margin-top: 0;
+        color: #950101;
+        letter-spacing: 1px;
+    }
+
+    a{
+        text-decoration: none;
+        color: #FF0075;
+        font-size: 18px;
+        border-radius: 15px;
+        padding: 3px 9px 3px 9px;
+    }
+    a:hover{
+        color: #2C272E;
+    }
+   
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: start;
+        width: 100%;
+        height: 65%;
+    }
+
+    li{
+        padding: 4px;
+        margin-bottom: 5px;
+    }
+
+    a:focus{
+        background-color: #212121;
+        color: beige;
+    }
+
+    .rarbag{
+        outline: 2px dotted #FF0075;
+    }
+
+    .eztv{
+        outline: 2px dotted #950101;
+    }
+
+    .section{
+        background-color: #950101;
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        bottom: 100px;
+        height: 60px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        border-top: 1px solid black;
+    }
+
+    .section a{
+        color: #1597E5;
+        margin-left: 12px;
+        margin-right: 12px;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 17px;
+        text-transform: uppercase;
+    }
+
+    input{
+        width: 380px;
+        height: 20px;
+        border-radius: 7px;
+        font-size: 16px; 
+        padding: 12px 20px 12px 20px; 
+        border: 1px solid #ddd; 
+        margin-bottom: 36px; 
+        margin-right: 30px;
+    }
+
+    input:focus{
+        outline: none !important;
+        border: 1px solid #FF0075;
+    }
+
+    .input-container{
+        position: relative;
+    }
+
+    .input-container a{
+        position: absolute;
+        top: -1px;
+        right: 10px;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        justify-content: center;
+        vertical-align: middle;
+        font-size: 14px;
+        color: gray;        
+        border-radius: 50%;
+        padding: 1px 1px 0 1px;
+        border: 2px solid gray; 
+    }
+
+    button{
+        background-color: #FF0075;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 15px;
+        border: none;
+        padding: 8px 16px 8px 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    button:hover{
+        background-color: #2C272E;
+    }
+
+    button:focus{
+        background-color: #2C272E;
+    }
+
+</Style>
+<body>
+
+    <div>
+        <span class="input-container">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a show..">
+            <!--<a href="">X</a>-->
+        </span>
+
+        <button onclick="myFunction()">All</button>
+        <button onclick="filterByDay('Sunday')">Sunday</button>
+        <button onclick="filterByDay('Monday')">Monday</button>
+        <button onclick="filterByDay('Tuesday')">Tuesday</button>
+        <button onclick="filterByDay('Wednesday')">Wednesday</button>
+        <button onclick="filterByDay('Thursday')">Thursday</button>
+        <button onclick="filterByDay('Friday')">Friday</button>
+        <button onclick="filterByDay('Saturday')">Saturday</button>
+
+    </div>
+    
+
+    <ul id="myUL">
+    <!--
+
+        <li><a class="eztv" href="https://eztv.re/shows/319/archer-2009/"   target="_blank">The lord of the rings</a></li>
+        <li><a class="eztv" href="https://eztv.re/shows/319/archer-2009/"   target="_blank">Bleach</a></li>
+    -->
+
+        <li><a class="eztv" data-day="saturday" href="https://eztv.re/shows/3037/a-discovery-of-witches/"   target="_blank">A discovery of witches</a></li>
+        <li><a class="eztv" data-day="" href="https://ytstvmovies.xyz/series/arcane-tv-series-2021"   target="_blank">Arcane</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/319/archer-2009/"   target="_blank">Archer</a></li>
+        <li><a class="eztv" data-day="sunday" href="https://nyaa.si/?f=0&c=1_2&q=SHINGEKI+NO+KYOJIN"  target="_blank">Attack on titan</a></li>
+        <li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/18492/batwoman/"   target="_blank">Batwoman</a></li>
+        <li><a class="eztv" href="https://eztv.re/shows/172186/blood-of-zeus/"   target="_blank">Blood of zeus</a></li>
+		<li><a class="eztv" href="https://nyaa.si/?f=0&c=1_2&q=black+clover"   target="_blank">Black Clover</a></li>
+        <li><a class="eztv" data-day="sunday" href="https://eztv.re/shows/2110/boruto-naruto-next-generations/"   target="_blank">Boruto</a></li>
+        <li><a class="eztv" data-day="friday" href="https://eztv.re/shows/4440/cobra-kai/"   target="_blank">Cobra kai</a></li>
+        <li><a class="rarbag" data-day="" href="https://rarbgtor.org/torrents.php?search=Charmed+2018"   target="_blank">Charmed 2018</a></li>
+        <li><a class="rarbag" data-day="" href="https://rarbgtor.org/s/Browns/"   target="_blank">Dan Brown's: The lost symbol</a></li>
+        <li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/4466/doom-patrol/"   target="_blank">Doom patrol</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/252495/dota-dragons-blood/"   target="_blank">DOTA dragons blood</a></li>
+		<li><a class="eztv" data-day="" href="https://nyaa.si/?f=0&c=1_2&q=edens+zero"   target="_blank"> Edens Zero</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/344366/foundation/"   target="_blank">Foundation</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/481/game-of-thrones/"   target="_blank">Game of thrones</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/4798/gomora/"   target="_blank">Gomora</a></li>
+        <li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/370325/hawkeye/"   target="_blank">Hawkeye</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/23839/his-dark-materials/"   target="_blank">His dark materials</a></li>
+        <li><a class="eztv" data-day="tuesday" href="https://eztv.re/shows/391360/how-i-met-your-father/"   target="_blank">How i met your father</a></li>
+        <li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/1568/legends-of-tomorrow/"   target="_blank">Legends of tomorrow</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/293695/loki/"   target="_blank">Loki</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/315329/masters-of-the-universe-revelation/"   target="_blank">Masters of the universe</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/39253/mythic-quest-ravens-banquet/"   target="_blank">Mythic quest</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/3729/narcos-mexico/"   target="_blank">Narcos: Mexico</a></li>
+		<li><a class="eztv" data-day="wednesday" href="https://eztv.yt/shows/389034/naomi/"   target="_blank">Naomi</a></li>
+        <li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/392251/peacemaker//"   target="_blank">Peacemaker</a></li>
+        <li><a class="eztv" data-day="" href="hhttps://eztv.re/shows/9393/pennyworth/"   target="_blank">Pennyworth</a></li>
+        <li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/141999/raised-by-wolves/"   target="_blank">Raised by wolves</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/34201/star-trek-picard/"   target="_blank">Star trek picard</a></li>
+        <li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/2249/star-trek-discovery/"   target="_blank">Star trek discovery</a></li>
+		<li><a class="eztv" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=SHAMAN+KING"   target="_blank">Shaman King</a></li>
+		<li><a class="eztv" data-day="" href="https://eztv.yt/shows/86906/space-force/"   target="_blank">Space Force</a></li>
+        <li><a class="eztv" data-day="" href="https://eztv.re/shows/23338/see/"   target="_blank">See</a></li>
+        <li><a class="eztv" data-day=""  href="https://eztv.re/shows/81173/snowpiercer/"   target="_blank">Snowpiercer</a></li>
+        <li><a class="eztv" data-day=""  href="https://eztv.re/shows/81199/stargirl/"   target="_blank">Stargirl</a></li>
+        <li><a class="eztv" data-day=""  href="https://eztv.re/shows/1222/supergirl/"  target="_blank">Supergirl</a></li>
+        <li><a class="eztv" data-day="wednesday" href="https://eztv.re/shows/237836/superman-and-lois/"   target="_blank">Superman & lois</a></li>
+		<li><a class="eztv" data-day="" href="https://eztv.re/shows/405605/vikings-valhalla/"   target="_blank">Vikings: Valhalla</a></li>
+        <li><a class="eztv" data-day="friday" href="https://eztv.re/shows/220066/walker/"   target="_blank">Walker</a></li>
+        <li><a class="rarbag" data-day="friday"  href="https://proxyrarbg.org/s/WandaVision/"   target="_blank">Wanda Vision</a></li>
+        <li><a class="eztv" data-day=""  href="https://eztv.re/shows/1913/westworld/"   target="_blank">Westworld</a></li>
+        <li><a class="eztv" data-day="friday"  href="https://eztv.re/shows/368023/the-wheel-of-time/"   target="_blank">The wheel of time</a></li>
+        <li><a class="eztv" data-day="friday" href="https://eztv.re/shows/31307/the-witcher/"   target="_blank">The witcher</a></li>
+		<li><a class="eztv" data-day="" href="https://eztv.re/shows/1058/the-flash/"   target="_blank">The flash</a></li>
+		<li><a class="eztv" data-day="thursday" href="https://eztv.re/shows/383609/the-book-of-boba-fett/"   target="_blank">The book of boba fett</a></li>
+		<li><a class="eztv" data-day="saturday" href="https://eztv.yt/shows/395018/the-legend-of-vox-machina/"   target="_blank">The Legend of Vox Machina</a></li>
+		<li><a class="eztv" data-day="" href="https://eztv.re/shows/4457/the-dragon-prince/"  target="_blank">The dragon prince</a></li>
+        <li><a class="eztv" data-day="friday" href="https://eztv.re/shows/1342/the-expanse/"   target="_blank">The expanse</a></li>
+		<li><a class="eztv" data-day="" href="https://eztv.re/shows/9855/the-boys/"   target="_blank">The boys</a></li>
+		<li><a class="eztv" data-day="" href="https://eztv.re/shows/25836/the-mandalorian/"  target="_blank">The mandalorian</a></li>
+		<li><a class="eztv" data-day="thursday"  href="https://eztv.re/shows/3540/titans//"   target="_blank">Titans</a></li>
+        <li><a class="eztv" data-day=""  href="https://eztv.re/shows/4455/the-umbrella-academy/"  target="_blank">The umbrella academy</a></li>
+        <li><a class="eztv" data-day="saturday" href="https://eztv.re/shows/260081/yashahime-princess-half-demon/"  target="_blank">Yashahime</a></li>
+        <li><a class="eztv" data-day="friday" href="https://eztv.re/shows/4146/young-justice/"   target="_blank">Young justice</a></li>
+        <li><a class="eztv" data-day="friday" href="https://eztv.re/shows/2250/young-sheldon/"   target="_blank">Young sheldon</a></li>
+
+    </ul>
+
+    <div class="section">
+           <a href="https://thepiratebay.org/index.html" target="_blank">The pirate bay</a>
+           <a href="https://yts.mx/browse-movies" target="_blank">YTS MOVIES</a>
+           <a href="https://ytstvmovies.xyz/series" target="_blank">YTS SERIES</a>
+           <a href="https://eztv.re/showlist/" target="_blank">EZTV</a>
+           <a href="https://rarbgtor.org/torrents.php" target="_blank">RARBAG</a>
+           <a href="https://www.crunchyroll.com/" target="_blank">crunchyroll</a>
+    </div> 
+
+
+    <script>
+
+        document.getElementById("myInput").focus();
+       // document.querySelector("button").focus();
+
+        const input = document.getElementById('myInput');
+        const ul = document.getElementById("myUL");
+        const li = ul.getElementsByTagName('li');
+        var txtValue, a, i, day;
+
+
+        //filterByDay('thurseday');
+
+
+
+        function myFunction() {
+        
+          var filter = input.value.toUpperCase();
+
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+
+
+        function filterByDay(selectedDay){
+            
+            input.value = "";
+
+            for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            a.getAttribute("data-day")
+            if (a.getAttribute("data-day") === selectedDay.toLowerCase()) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+          openAllLinks(selectedDay)
+        }
+
+        /*
+        function openAllLinks(selectedDay){
+            var visibleElements = Array.from(document.querySelectorAll('li')).filter(s =>
+            window.getComputedStyle(s).getPropertyValue('display') != 'none'
+            );
+
+            
+            visibleElements.forEach(function (item) {
+            var link =  item.querySelector('a').href;
+            window.open(link);
+            //console.log(link);
+            });
+        }*/
+
+
+        </script>
+</body>
+</html>
