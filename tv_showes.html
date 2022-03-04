@@ -257,6 +257,8 @@
 
 
     <script>
+	    
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
         document.getElementById("myInput").focus();
        // document.querySelector("button").focus();
@@ -265,10 +267,6 @@
         const ul = document.getElementById("myUL");
         const li = ul.getElementsByTagName('li');
         var txtValue, a, i, day;
-
-
-        //filterByDay('thurseday');
-
 
 
         function myFunction() {
@@ -303,6 +301,10 @@
           }
           openAllLinks(selectedDay)
         }
+	    
+	const d = new Date();
+        let currentDay = weekday[d.getDay()];
+        filterByDay(currentDay);
 
         /*
         function openAllLinks(selectedDay){
