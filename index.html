@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My shows</title>
     <link rel="icon" type="image/png" href="movie.png">
-	
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
 </head>
 <Style>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&family=Lato&family=Montserrat&family=Readex+Pro&family=Roboto&display=swap');
+
     html{
         height: 100%;
         margin: 0;
@@ -24,6 +27,7 @@
         padding: 40px;
         margin: 0;
         background-color: #fffefe;
+        background-color: #26272b;
         color: #FF0075;
         font-family: 'Montserrat', sans-serif;
         font-weight: 900;
@@ -46,9 +50,10 @@
         padding: 3px 9px 3px 9px;
     }
     a:hover{
-        color: #2C272E;
+        color: #B12025;
+        transform: scale(1.1);
     }
-   
+
 
     ul{
         list-style-type: none;
@@ -87,6 +92,7 @@
         bottom: 100px;
         height: 60px;
         background-color: white;
+        background-color: #26272b;
         display: flex;
         flex-direction: row;
         text-align: center;
@@ -108,10 +114,10 @@
         width: 300px;
         height: 20px;
         border-radius: 7px;
-        font-size: 16px; 
-        padding: 12px 20px 12px 20px; 
-        border: 1px solid #ddd; 
-        margin-bottom: 12px; 
+        font-size: 16px;
+        padding: 12px 20px 12px 20px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
         margin-right: 30px;
     }
 
@@ -134,10 +140,10 @@
         justify-content: center;
         vertical-align: middle;
         font-size: 14px;
-        color: gray;        
+        color: gray;
         border-radius: 50%;
         padding: 1px 1px 0 1px;
-        border: 2px solid gray; 
+        border: 2px solid gray;
         cursor: pointer;
     }
 
@@ -147,7 +153,7 @@
         color: white;
         font-size: 16px;
         font-weight: bold;
-        border-radius: 15px;
+        border-radius: 10px;
         border: none;
         padding: 8px 16px 8px 16px;
         margin-left: 10px;
@@ -179,7 +185,7 @@
         transform: translate(0, 12px);
     }
 
-   
+
     label{
         font-size: 15px;
         display: block;
@@ -187,7 +193,7 @@
         text-indent: -15px;
         margin-top: 0;
         margin-left: 4px;
-        margin-bottom: 32px; 
+        margin-bottom: 32px;
 
     }
 
@@ -201,6 +207,51 @@
         accent-color: #FF0075;
     }
 
+    .show{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 65%;
+      margin-left: -12px;
+      overflow-y: scroll;
+      padding-top: 18px;
+    }
+
+    .show a{
+      height: 0;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .show img{
+      width: 140px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .show h4{
+      margin: 0;
+      justify-content: center;
+      text-align: center;
+      font-size: 19px;
+      max-width: 140px;
+      font-family: 'Bebas Neue';
+      letter-spacing: 2px;
+    }
+
+    .show .box{
+      margin-left: 12px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      transition: all .15s ease-in-out;
+    }
+
+    .show .box:hover{
+        transform: scale(1.05);
+    }
 
 
 </Style>
@@ -221,93 +272,500 @@
         <button onclick="filterByDay('Friday')">Friday</button>
         <button onclick="filterByDay('Saturday')">Saturday</button>
 
-        <a href="https://utweb.trontv.com/gui/index.html"  target="_blank"> <img src="utorrent-logo.png" alt=""> </a>
-        
+        <a href="https://utweb.trontv.com/gui/index.html"  target="_blank"> <img src="images/utorrent-logo.png" alt=""> </a>
+
     </div>
 
     <label>
         <input class="mycheckbox" type="checkbox" id="chkEnded" onclick="ShowHideDiv(this)">
         Include ended shows
     </label>
-    
 
-    <ul id="myUL">
-        <li><a class="eztv" data-status="running" data-day="saturday" href="https://eztv.yt/shows/3037/a-discovery-of-witches/"   target="_blank">A discovery of witches</a></li>
-	    <li><a class="eztv" data-status="running" data-day="wednesday" href="https://eztv.yt/shows/454001/andor/"  target="_blank">Andor</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://ytstvmovies.xyz/series/arcane-tv-series-2021"   target="_blank">Arcane</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/319/archer-2009/"   target="_blank">Archer</a></li>
-        <li><a class="eztv" data-status="running" data-day="sunday" href="https://nyaa.si/?f=0&c=1_2&q=SHINGEKI+NO+KYOJIN"  target="_blank">Attack on titan</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/18492/batwoman/"   target="_blank">Batwoman</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/172186/blood-of-zeus/"   target="_blank">Blood of zeus</a></li>
-    	<li><a class="eztv" data-status="running" data-day="" href="https://nyaa.si/?f=0&c=1_2&q=black+clover"   target="_blank">Black Clover</a></li>
-    	<li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/9855/the-boys/"   target="_blank">The boys</a></li>
-    	<li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/383609/the-book-of-boba-fett/"   target="_blank">The book of boba fett</a></li>
-        <li><a class="eztv" data-status="running" data-day="sunday" href="https://eztv.yt/shows/2110/boruto-naruto-next-generations/"   target="_blank">Boruto</a></li>
-        <li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/4440/cobra-kai/"   target="_blank">Cobra kai</a></li>
-    	<li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/453234/cyberpunk-edgerunners/"   target="_blank">Cyberpunk Edgerunners</a></li>
-        <li><a class="rarbag" data-status="running" data-day="saturday" href="https://rarbgtor.org/torrents.php?search=Charmed+2018"   target="_blank">Charmed 2018</a></li>
-    	<li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/4457/the-dragon-prince/"  target="_blank">The dragon prince</a></li>
-        <li><a class="rarbag" data-status="running" data-day="" href="https://rarbgtor.org/s/Browns/"   target="_blank">Dan Brown's: The lost symbol</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/4466/doom-patrol/"   target="_blank">Doom patrol</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/252495/dota-dragons-blood/"   target="_blank">DOTA dragons blood</a></li>
-    	<li><a class="eztv" data-status="running" data-day="" href="https://nyaa.si/?f=0&c=1_2&q=edens+zero"   target="_blank"> Edens Zero</a></li>
-    	<li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/1342/the-expanse/"   target="_blank">The expanse</a></li>
-    	<li><a class="eztv" data-status="running" data-day="wednesday" href="https://www.mako.co.il/mako-vod-yes/fauda"   target="_blank">Fauda פאודה</a></li>
-    	<li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/1058/the-flash/"   target="_blank">The flash</a></li>
-        <li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/23623/for-all-mankind/"   target="_blank">For all mankind</a></li>
-	    <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/344366/foundation/"   target="_blank">Foundation</a></li>
-    	<li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/220192/fate-the-winx-saga/"   target="_blank">Fate: The Winx Saga</a></li>
-        <li><a class="eztv" data-status="finished" data-day="monday" href="https://eztv.yt/shows/481/game-of-thrones/"   target="_blank">Game of thrones</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/4798/gomora/"   target="_blank">Gomora</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/370325/hawkeye/"   target="_blank">Hawkeye</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/415613/halo/"   target="_blank">Halo</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/23839/his-dark-materials/"   target="_blank">His dark materials</a></li>
-        <li><a class="eztv" data-status="running" data-day="Monday" href="https://eztv.yt/shows/451106/house-of-the-dragon/"    target="_blank">House of the dragon</a></li>  
-        <li><a class="eztv" data-status="running" data-day="tuesday" href="https://eztv.yt/shows/391360/how-i-met-your-father/"   target="_blank">How i met your father</a></li>   
-    	<li><a class="eztv" data-status="running" data-day="wednesday" href="https://www.kan.org.il/page.aspx?landingpageid=1169"   target="_blank">Kupa rashit קופה ראשית</a></li>
-    	<li><a class="eztv" data-status="running" data-day="wednesday" href="https://eztv.yt/shows/1416/the-last-kingdom/"   target="_blank">The last kingdom</a></li> 
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/1568/legends-of-tomorrow/"   target="_blank">Legends of tomorrow</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/293695/loki/"   target="_blank">Loki</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/315329/masters-of-the-universe-revelation/"   target="_blank">Masters of the universe</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/39253/mythic-quest-ravens-banquet/"   target="_blank">Mythic quest</a></li>
-    	<li><a class="eztv" data-status="running" data-day="wednesday" href="https://eztv.yt/shows/417593/moon-knight/"   target="_blank">Moon knight</a></li>
-        <li><a class="eztv" data-status="running" data-day="" href="https://eztv.re/shows/3729/narcos-mexico/"   target="_blank">Narcos: Mexico</a></li>
-    	<li><a class="eztv" data-status="running" data-day="wednesday" href="https://eztv.yt/shows/389034/naomi/"   target="_blank">Naomi</a></li>    
-    	<li><a class="eztv" data-status="finished" data-day="wednesday" href="https://eztv.yt/shows/438104/obi-wan-kenobi/"   target="_blank">Obi wan kenobi</a></li> 
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/392251/peacemaker//"   target="_blank">Peacemaker</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.re/shows/9393/pennyworth/"   target="_blank">Pennyworth</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/463396/the-peripheral/"   target="_blank">The peripheral</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/141999/raised-by-wolves/"   target="_blank">Raised by wolves</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/2249/star-trek-discovery/"   target="_blank">Star trek discovery</a></li>
-    	<li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/34201/star-trek-picard/"   target="_blank">Star trek picard</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/300795/star-trek-strange-new-worlds/"   target="_blank">Star trek strange new worlds</a></li>
-    	<li><a class="eztv" data-status="running" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=SHAMAN+KING"   target="_blank">Shaman King</a></li>
-    	<li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/86906/space-force/"   target="_blank">Space Force</a></li>
-        <li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/23338/see/"   target="_blank">See</a></li>
-    	<li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.re/shows/451108/she-hulk-attorney-at-law/"   target="_blank">She hulk: attorney at law</a></li>
-        <li><a class="eztv" data-status="running" data-day=""  href="https://eztv.yt/shows/81173/snowpiercer/"   target="_blank">Snowpiercer</a></li>
-        <li><a class="eztv" data-status="running" data-day=""  href="https://eztv.yt/shows/81199/stargirl/"   target="_blank">Stargirl</a></li>    
-    	<li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/1861/stranger-things/"   target="_blank">Stranger things</a></li> 
-        <li><a class="eztv" data-status="running" data-day=""  href="https://eztv.yt/shows/1222/supergirl/"  target="_blank">Supergirl</a></li>
-        <li><a class="eztv" data-status="running" data-day="wednesday" href="https://eztv.yt/shows/237836/superman-and-lois/"   target="_blank">Superman & lois</a></li>
-    	<li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/405605/vikings-valhalla/"   target="_blank">Vikings: Valhalla</a></li>
-        <li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/220066/walker/"   target="_blank">Walker</a></li>
-        <li><a class="rarbag" data-status="running" data-day="friday"  href="https://proxyrarbg.org/s/WandaVision/"   target="_blank">Wanda Vision</a></li>
-        <li><a class="eztv" data-status="finished" data-day=""  href="https://eztv.yt/shows/1913/westworld/"   target="_blank">Westworld</a></li>
-        <li><a class="eztv" data-status="running" data-day=""  href="https://eztv.yt/shows/474548/willow/"   target="_blank">Willow</a></li>
-        <li><a class="eztv" data-status="running" data-day="friday"  href="https://eztv.yt/shows/368023/the-wheel-of-time/"   target="_blank">The wheel of time</a></li>
-        <li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/31307/the-witcher/"   target="_blank">The witcher</a></li>
-    	<li><a class="eztv" data-status="running" data-day="saturday" href="https://eztv.yt/shows/395018/the-legend-of-vox-machina/"   target="_blank">The Legend of Vox Machina</a></li>
-    	<li><a class="eztv" data-status="running" data-day="" href="https://eztv.yt/shows/25836/the-mandalorian/"  target="_blank">The mandalorian</a></li>
-    	<li><a class="eztv" data-status="running" data-day="thursday"  href="https://eztv.yt/shows/3540/titans//"   target="_blank">Titans</a></li>
-    	<li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/155482/tehran/"   target="_blank">Tehran</a></li>
-    	<li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/search/tekken"   target="_blank">Tekken Bloodline</a></li>
-        <li><a class="eztv" data-status="running" data-day="wednesday"  href="https://eztv.yt/shows/4455/the-umbrella-academy/"  target="_blank">The umbrella academy</a></li>
-	    <li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/451107/the-lord-of-the-rings-the-rings-of-power/"    target="_blank">The Lord of the rings</a></li>
-        <li><a class="eztv" data-status="running" data-day="saturday" href="https://eztv.yt/shows/260081/yashahime-princess-half-demon/"  target="_blank">Yashahime</a></li>
-        <li><a class="eztv" data-status="running" data-day="thursday" href="https://eztv.yt/shows/4146/young-justice/"   target="_blank">Young justice</a></li>
-        <li><a class="eztv" data-status="running" data-day="friday" href="https://eztv.yt/shows/2250/young-sheldon/"   target="_blank">Young sheldon</a></li>
-    </ul>
+    <div class="show">
+
+      <div class="box">
+        <a data-status="running" data-day="saturday" href="https://eztv.yt/shows/3037/a-discovery-of-witches/" target="_blank">
+          <img src="images/a discovary of witches.webp">
+          <h4>A discovery of witches</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/454001/andor/" target="_blank">
+          <img src="images/andor.webp">
+          <h4>Andor</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://ytstvmovies.xyz/series/arcane-tv-series-2021" target="_blank">
+          <img src="images/arcane.webp">
+          <h4>Arcane</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/319/archer-2009/" target="_blank">
+          <img src="images/archer.webp">
+          <h4>Archer</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="sunday" href="https://nyaa.si/?f=0&c=1_2&q=SHINGEKI+NO+KYOJIN" target="_blank">
+          <img src="images/attack on titan.webp">
+          <h4>Attack on titan</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/18492/batwoman/" target="_blank"><img src="images/batwoman.webp" ></a>
+        <h4>Batwoman</h4>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/172186/blood-of-zeus/" target="_blank">
+          <img src="images/blood of zeus.webp">
+          <h4>Blood of zeus</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=black+clover" target="_blank">
+          <img src="images/black clover.webp">
+          <h4>Black Clover</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/9855/the-boys/" target="_blank">
+          <img src="images/the boys.webp">
+          <h4>The boys</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/383609/the-book-of-boba-fett/" target="_blank">
+          <img src="images/boba fett.webp">
+          <h4>The book of boba fett</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="sunday" href="https://eztv.yt/shows/2110/boruto-naruto-next-generations/" target="_blank">
+          <img src="images/boruto.webp">
+          <h4>Boruto</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/4440/cobra-kai/" target="_blank">
+          <img src="images/cobra kai.webp">
+          <h4>Cobra kai</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/453234/cyberpunk-edgerunners/" target="_blank">
+          <img src="images/cyberpunk.webp">
+          <h4>Cyberpunk edgerunners</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="saturday" href="https://rarbgtor.org/torrents.php?search=Charmed+2018" target="_blank">
+          <img src="images/charmed.webp">
+          <h4>Charmed 2018</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/4457/the-dragon-prince/" target="_blank">
+          <img src="images/dragon prince.webp">
+          <h4>The dragon prince</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="finished" data-day="thursday" href="https://rarbgtor.org/s/Browns/" target="_blank">
+          <img src="images/hod.webp">
+          <h4>Dan Brown's: The lost symbol</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/4466/doom-patrol/" target="_blank">
+          <img src="images/doom patrol.webp">
+          <h4>Doom patrol</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/252495/dota-dragons-blood/" target="_blank">
+          <img src="images/dota.webp">
+          <h4>DOTA dragons blood</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=edens+zero" target="_blank">
+          <img src="images/edens zero.webp">
+          <h4>Edens Zero</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/1342/the-expanse/" target="_blank">
+          <img src="images/the expanse.webp">
+          <h4>The expanse</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="wednesday" href="https://www.mako.co.il/mako-vod-yes/fauda" target="_blank">
+          <img src="images/fauda.webp">
+          <h4>Fauda פאודה</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/1058/the-flash/" target="_blank">
+          <img src="images/flash.webp">
+          <h4>The flash</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/23623/for-all-mankind/" target="_blank">
+          <img src="images/for all man kind.webp">
+          <h4>For all mankind</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/344366/foundation/" target="_blank">
+          <img src="images/foundation.webp">
+          <h4>Foundation</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/220192/fate-the-winx-saga/" target="_blank">
+          <img src="images/winx.webp">
+          <h4>Fate: The Winx Saga</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="finished" data-day="monday" href="https://eztv.yt/shows/481/game-of-thrones/" target="_blank">
+          <img src="images/got.webp">
+          <h4>Game of thrones</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/4798/gomora/" target="_blank">
+          <img src="images/gomorrah.webp">
+          <h4>Gomora</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/370325/hawkeye/" target="_blank">
+          <img src="images/hawkeye.webp">
+          <h4>Hawkeye</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/415613/halo/" target="_blank">
+          <img src="images/halo.webp">
+          <h4>Halo</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/23839/his-dark-materials/" target="_blank">
+          <img src="images/his dark materials.webp">
+          <h4>His dark materials</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="monday" href="https://eztv.yt/shows/451106/house-of-the-dragon/" target="_blank">
+          <img src="images/hod.webp">
+          <h4>House of the dragon</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/391360/how-i-met-your-father/" target="_blank">
+          <img src="images/himyf.webp">
+          <h4>How i met your father</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="wednesday" href="https://www.kan.org.il/page.aspx?landingpageid=1169" target="_blank">
+          <img src="images/kupa rashit.webp">
+          <h4>Kupa rashit קופה ראשית</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="finished" data-day="wednesday" href="https://eztv.yt/shows/1416/the-last-kingdom/" target="_blank">
+          <img src="images/the last kingdom.webp">
+          <h4>The last kingdom</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/1568/legends-of-tomorrow/" target="_blank">
+          <img src="images/legends.webp">
+          <h4>Legends of tomorrow</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/293695/loki/" target="_blank">
+          <img src="images/loki.webp">
+          <h4>Loki</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/25836/the-mandalorian/" target="_blank">
+          <img src="images/mandalorian.webp">
+          <h4>The mandalorian</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/315329/masters-of-the-universe-revelation/" target="_blank">
+          <img src="images/heman.webp">
+          <h4>Masters of the universe</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/39253/mythic-quest-ravens-banquet/" target="_blank">
+          <img src="images/mythic quest.webp">
+          <h4>Mythic quest</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/417593/moon-knight/" target="_blank">
+          <img src="images/moon kinght.webp">
+          <h4>Moon knight</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="finished" data-day="thursday" href="https://eztv.re/shows/3729/narcos-mexico/" target="_blank">
+          <img src="images/narcos.webp">
+          <h4>Narcos: Mexico</h4>
+        </a>
+      </div>
+
+      <div class="box">
+        <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/389034/naomi/" target="_blank">
+          <img src="images/naomi.webp">
+          <h4>Naomi</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="finished" data-day="wednesday" href="https://eztv.yt/shows/438104/obi-wan-kenobi/" target="_blank">
+          <img src="images/kenobi.webp">
+          <h4>Obi wan kenobi</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.re/shows/9393/pennyworth/" target="_blank">
+          <img src="images/pennyworth.webp">
+          <h4>Pennyworth</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/463396/the-peripheral/" target="_blank">
+          <img src="images/the peripheal.webp">
+          <h4>The peripheral</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/141999/raised-by-wolves/" target="_blank">
+          <img src="images/raised by wolves.webp">
+          <h4>Raised by wolves</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/2249/star-trek-discovery/" target="_blank">
+          <img src="images/star trek discover.webp">
+          <h4>Star trek discovery</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/34201/star-trek-picard/" target="_blank">
+          <img src="images/star trek picard.webp">
+          <h4>Star trek picard</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/300795/star-trek-strange-new-worlds/" target="_blank">
+          <img src="images/star trek strange new worlds.webp">
+          <h4>Star trek strange new worlds</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=SHAMAN+KING" target="_blank">
+          <img src="images/shaman King.webp">
+          <h4>Shaman King</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/86906/space-force/" target="_blank">
+          <img src="images/space Force.webp">
+          <h4>Space Force</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/23338/see/" target="_blank">
+          <img src="images/see.webp">
+          <h4>See</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.re/shows/451108/she-hulk-attorney-at-law/" target="_blank">
+          <img src="images/she hulk.webp">
+          <h4>She hulk: attorney at law</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/81173/snowpiercer/" target="_blank">
+          <img src="images/snowpiercer.webp">
+          <h4>Snowpiercer</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/81199/stargirl/" target="_blank">
+          <img src="images/stargirl.webp">
+          <h4>Stargirl</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/1861/stranger-things/" target="_blank">
+          <img src="images/stranger things.webp">
+          <h4>Stranger things</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/1222/supergirl/" target="_blank">
+          <img src="images/supergirl.webp">
+          <h4>Supergirl</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/237836/superman-and-lois/" target="_blank">
+          <img src="images/superman.webp">
+          <h4>Superman & lois</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" data-status="running" data-day="thursday" href="https://eztv.yt/shows/405605/vikings-valhalla/" target="_blank">
+          <img src="images/vikings.webp">
+          <h4>Vikings: Valhalla</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/220066/walker/" target="_blank">
+          <img src="images/walker.webp">
+          <h4>Walker</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="finished" data-day="friday" href="https://proxyrarbg.org/s/WandaVision/" target="_blank">
+          <img src="images/wanda Vision.webp">
+          <h4>Wanda Vision</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/1913/westworld/" target="_blank">
+          <img src="images/westworld.webp">
+          <h4>Westworld</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/474548/willow/" target="_blank">
+          <img src="images/willow.webp">
+          <h4>Willow</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/368023/the-wheel-of-time/" target="_blank">
+          <img src="images/wheel of time.webp">
+          <h4>The wheel of time</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/31307/the-witcher/" target="_blank">
+          <img src="images/the witcher.webp">
+          <h4>The witcher</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="saturday" href="https://eztv.yt/shows/395018/the-legend-of-vox-machina/" target="_blank">
+          <img src="images/vox machina.webp">
+          <h4>The Legend of Vox Machina</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/3540/titans/" target="_blank">
+          <img src="images/titans.webp">
+          <h4>Titans</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/155482/tehran/" target="_blank">
+          <img src="images/teheran.webp">
+          <h4>Tehran</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/search/tekken" target="_blank">
+          <img src="images/tekken.webp">
+          <h4>Tekken Bloodline</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/4455/the-umbrella-academy/" target="_blank">
+          <img src="images/umbrella academy.webp">
+          <h4>The umbrella academy</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/451107/the-lord-of-the-rings-the-rings-of-power/" target="_blank">
+          <img src="images/lotr.webp">
+          <h4>The Lord of the rings</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="saturday" href="https://eztv.yt/shows/260081/yashahime-princess-half-demon/" target="_blank">
+          <img src="images/yashahime.webp">
+          <h4>Yashahime</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/4146/young-justice/" target="_blank">
+          <img src="images/young justice.webp">
+          <h4>Young justice</h4>
+        </a>
+      </div>
+      <div class="box">
+        <a data-status="running" data-day="friday" href="https://eztv.yt/shows/2250/young-sheldon/" target="_blank">
+          <img src="images/young sheldon.webp">
+          <h4>Young sheldon</h4>
+        </a>
+      </div>
+
+   </div>
 
     <div class="section">
 
@@ -318,24 +776,26 @@
            <a href="https://rarbgtor.org/torrents.php" target="_blank">RARBAG</a>
 	       <a href="https://nyaa.si/?f=0&c=1_0&q=bleach" target="_blank">Nyaa</a>
            <a href="https://www.crunchyroll.com/" target="_blank">crunchyroll</a>
-    </div> 
+    </div>
 
 
     <script>
-	    
+
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
         document.getElementById("myInput").focus();
        // document.querySelector("button").focus();
 
         const input = document.getElementById('myInput');
-        const ul = document.getElementById("myUL");
-        const li = ul.getElementsByTagName('li');
+      //  const ul = document.getElementById("myUL");
+      //  const li = ul.getElementsByTagName('li');
+        const li = document.querySelectorAll(".box");
+        console.log(li);
         var txtValue, a, i, day;
 
 
         function myFunction() {
-        
+
           var filter = input.value.toUpperCase();
 
           // Loop through all list items, and hide those who don't match the search query
@@ -362,14 +822,14 @@
 
 
         function filterByDay(selectedDay){
-            
+
             input.value = "";
 
             for (i = 0; i < li.length; i++) {
             a = li[i].getElementsByTagName("a")[0];
             isRunning = a.getAttribute("data-status")
            // a.getAttribute("data-day")
-           
+
                 if(chkEnded.checked){
                     if (a.getAttribute("data-day") === selectedDay.toLowerCase()) {
                     li[i].style.display = "";
@@ -390,7 +850,7 @@
         //////////////////////// chkEnded.checked == true show finished as well
         console.log(chkEnded.checked);
 
-	    
+
 	    const d = new Date();
         let currentDay = weekday[d.getDay()];
         filterByDay(currentDay);
@@ -401,7 +861,7 @@
             window.getComputedStyle(s).getPropertyValue('display') != 'none'
             );
 
-            
+
             visibleElements.forEach(function (item) {
             var link =  item.querySelector('a').href;
             window.open(link);
