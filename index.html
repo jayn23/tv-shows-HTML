@@ -254,11 +254,27 @@
       margin-right: 12px;
       margin-bottom: 12px;
       transition: all .15s ease-in-out;
+      position: relative;
     }
 
     .show .box:hover{
         transform: scale(1.05);
     }
+
+    .notify-badge{
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    background: #feb913;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    border: 1px solid white;
+    color: black;
+    padding:5px 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: none;
+}
 
 
 </Style>
@@ -284,7 +300,7 @@
     </div>
 
     <label>
-        <input class="mycheckbox" type="checkbox" id="chkEnded" onclick="ShowHideDiv(this)">
+        <input class="mycheckbox" type="checkbox" id="chkEnded">
         Include ended shows
     </label>
 
@@ -292,6 +308,7 @@
 
       <div class="box">
         <a data-status="running" data-day="saturday" href="https://eztv.yt/shows/3037/a-discovery-of-witches/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/a discovary of witches.webp">
           <h4>A discovery of witches</h4>
         </a>
@@ -299,6 +316,7 @@
 
       <div class="box">
         <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/454001/andor/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/andor.webp">
           <h4>Andor</h4>
         </a>
@@ -306,6 +324,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://ytstvmovies.xyz/series/arcane-tv-series-2021" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/arcane.webp">
           <h4>Arcane</h4>
         </a>
@@ -313,6 +332,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/319/archer-2009/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/archer.webp">
           <h4>Archer</h4>
         </a>
@@ -320,18 +340,22 @@
 
       <div class="box">
         <a data-status="running" data-day="sunday" href="https://nyaa.si/?f=0&c=1_2&q=SHINGEKI+NO+KYOJIN" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/attack on titan.webp">
           <h4>Attack on titan</h4>
         </a>
       </div>
-	
+
       <div class="box">
-        <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/18492/batwoman/" target="_blank"><img src="images/batwoman.webp" ></a>
+        <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/18492/batwoman/" target="_blank">
+          <span class="notify-badge">NEW</span>
+          <img src="images/batwoman.webp" ></a>
         <h4>Batwoman</h4>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="monday" href="https://nyaa.si/?f=0&c=1_0&q=bleach" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/bleach.webp">
           <h4>Bleach</h4>
         </a>
@@ -339,6 +363,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/172186/blood-of-zeus/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/blood of zeus.webp">
           <h4>Blood of zeus</h4>
         </a>
@@ -346,6 +371,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=black+clover" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/black clover.webp">
           <h4>Black Clover</h4>
         </a>
@@ -354,6 +380,7 @@
 
       <div class="box">
         <a data-status="running" data-day="sunday" href="https://eztv.yt/shows/2110/boruto-naruto-next-generations/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/boruto.webp">
           <h4>Boruto</h4>
         </a>
@@ -361,6 +388,7 @@
 
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/4440/cobra-kai/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/cobra kai.webp">
           <h4>Cobra kai</h4>
         </a>
@@ -368,6 +396,7 @@
 
       <div class="box">
         <a data-status="finished" data-day="friday" href="https://eztv.yt/shows/453234/cyberpunk-edgerunners/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/cyberpunk.webp">
           <h4>Cyberpunk edgerunners</h4>
         </a>
@@ -375,6 +404,7 @@
 
       <div class="box">
         <a data-status="running" data-day="saturday" href="https://rarbgtor.org/torrents.php?search=Charmed+2018" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/charmed.webp">
           <h4>Charmed 2018</h4>
         </a>
@@ -382,6 +412,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/4466/doom-patrol/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/doom patrol.webp">
           <h4>Doom patrol</h4>
         </a>
@@ -389,20 +420,23 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/252495/dota-dragons-blood/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/dota.webp">
           <h4>DOTA dragons blood</h4>
         </a>
       </div>
-	    
+
       <div class="box">
-        <a data-status="running" data-day="thursday" href="https://eztv.yt/search/dragon-age" target="_blank">
+        <a data-status="running" data-day="thursday" data-new="2022/12/11" href="https://eztv.yt/search/dragon-age" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/dragon-age-absolution.webp">
           <h4>Dragon Age Absolution</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=edens+zero" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/edens zero.webp">
           <h4>Edens Zero</h4>
         </a>
@@ -410,6 +444,7 @@
 
       <div class="box">
         <a data-status="running" data-day="wednesday" href="https://www.mako.co.il/mako-vod-yes/fauda" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/fauda.webp">
           <h4>Fauda פאודה</h4>
         </a>
@@ -417,6 +452,7 @@
 
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/23623/for-all-mankind/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/for all man kind.webp">
           <h4>For all mankind</h4>
         </a>
@@ -424,6 +460,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/344366/foundation/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/foundation.webp">
           <h4>Foundation</h4>
         </a>
@@ -431,13 +468,15 @@
 
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/220192/fate-the-winx-saga/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/winx.webp">
           <h4>Fate: The Winx Saga</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="finished" data-day="monday" href="https://eztv.yt/shows/481/game-of-thrones/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/got.webp">
           <h4>Game of thrones</h4>
         </a>
@@ -445,18 +484,22 @@
 
       <div class="box">
         <a data-status="ended" data-day="thursday" href="https://eztv.yt/shows/4798/gomora/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/gomorrah.webp">
           <h4>Gomora</h4>
         </a>
       </div>
 
       <div class="box">
-        <a data-status="running" data-day="" href="https://eztv.yt/search/gangs-of-london" target="_blank"><img src="images/gangs-of-london.webp" ></a>
+        <a data-status="running" data-day="" data-new="2022/12/15" href="https://eztv.yt/search/gangs-of-london" target="_blank">
+        <span class="notify-badge">NEW</span>
+        <img src="images/gangs-of-london.webp" ></a>
         <h4>Gangs of London</h4>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/370325/hawkeye/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/hawkeye.webp">
           <h4>Hawkeye</h4>
         </a>
@@ -464,6 +507,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/415613/halo/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/halo.webp">
           <h4>Halo</h4>
         </a>
@@ -471,6 +515,7 @@
 
       <div class="box">
         <a data-status="running" data-day="tuesday" href="https://eztv.yt/shows/23839/his-dark-materials/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/his dark materials.webp">
           <h4>His dark materials</h4>
         </a>
@@ -478,6 +523,7 @@
 
       <div class="box">
         <a data-status="running" data-day="monday" href="https://eztv.yt/shows/451106/house-of-the-dragon/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/hod.webp">
           <h4>House of the dragon</h4>
         </a>
@@ -485,6 +531,7 @@
 
       <div class="box">
         <a data-status="running" data-day="tuesday" href="https://eztv.yt/shows/391360/how-i-met-your-father/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/himyf.webp">
           <h4>How i met your father</h4>
         </a>
@@ -492,6 +539,7 @@
 
       <div class="box">
         <a data-status="running" data-day="wednesday" href="https://www.kan.org.il/page.aspx?landingpageid=1169" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/kupa rashit.webp">
           <h4>Kupa rashit קופה ראשית</h4>
         </a>
@@ -499,6 +547,7 @@
 
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/1568/legends-of-tomorrow/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/legends.webp">
           <h4>Legends of tomorrow</h4>
         </a>
@@ -506,6 +555,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/293695/loki/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/loki.webp">
           <h4>Loki</h4>
         </a>
@@ -513,6 +563,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/315329/masters-of-the-universe-revelation/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/heman.webp">
           <h4>Masters of the universe</h4>
         </a>
@@ -520,6 +571,7 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/39253/mythic-quest-ravens-banquet/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/mythic quest.webp">
           <h4>Mythic quest</h4>
         </a>
@@ -527,6 +579,7 @@
 
       <div class="box">
         <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/417593/moon-knight/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/moon kinght.webp">
           <h4>Moon knight</h4>
         </a>
@@ -541,202 +594,233 @@
 
       <div class="box">
         <a data-status="finished" data-day="wednesday" href="https://eztv.yt/shows/389034/naomi/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/naomi.webp">
           <h4>Naomi</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="finished" data-day="wednesday" href="https://eztv.yt/shows/438104/obi-wan-kenobi/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/kenobi.webp">
           <h4>Obi wan kenobi</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.re/shows/9393/pennyworth/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/pennyworth.webp">
           <h4>Pennyworth</h4>
         </a>
       </div>
 
       <div class="box">
-        <a data-status="running" data-day="" href="https://eztv.yt/search/pantheon" target="_blank">
+        <a data-status="running" data-day="" data-new="2022/12/15" href="https://eztv.yt/search/pantheon" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/Pantheon.webp">
           <h4>Pantheon</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/141999/raised-by-wolves/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/raised by wolves.webp">
           <h4>Raised by wolves</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/2249/star-trek-discovery/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/star trek discover.webp">
           <h4>Star trek discovery</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/34201/star-trek-picard/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/star trek picard.webp">
           <h4>Star trek picard</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/300795/star-trek-strange-new-worlds/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/star trek strange new worlds.webp">
           <h4>Star trek strange new worlds</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://nyaa.si/?f=0&c=1_2&q=SHAMAN+KING" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/shaman king.webp">
           <h4>Shaman King</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/86906/space-force/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/space force.webp">
           <h4>Space Force</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="finished" data-day="friday" href="https://eztv.yt/shows/23338/see/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/see.webp">
           <h4>See</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.re/shows/451108/she-hulk-attorney-at-law/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/she hulk.webp">
           <h4>She hulk: attorney at law</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/81173/snowpiercer/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/snowpiercer.webp">
           <h4>Snowpiercer</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/81199/stargirl/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/stargirl.webp">
           <h4>Stargirl</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/1861/stranger-things/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/stranger things.webp">
           <h4>Stranger things</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/1222/supergirl/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/supergirl.webp">
           <h4>Supergirl</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/237836/superman-and-lois/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/superman.webp">
           <h4>Superman & lois</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/368023/the-wheel-of-time/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/wheel of time.webp">
           <h4>The wheel of time</h4>
         </a>
       </div>
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/31307/the-witcher/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/the witcher.webp">
           <h4>The witcher</h4>
         </a>
       </div>
-	   
+
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/1058/the-flash/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/flash.webp">
           <h4>The flash</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/383609/the-book-of-boba-fett/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/boba fett.webp">
           <h4>The book of boba fett</h4>
         </a>
       </div>
-	    
+
      <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/4457/the-dragon-prince/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/dragon prince.webp">
           <h4>The dragon prince</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="saturday" href="https://eztv.yt/shows/395018/the-legend-of-vox-machina/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/vox machina.webp">
           <h4>The Legend of Vox Machina</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="finished" data-day="wednesday" href="https://eztv.yt/shows/1416/the-last-kingdom/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/the last kingdom.webp">
           <h4>The last kingdom</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/3540/titans/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/titans.webp">
           <h4>Titans</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/155482/tehran/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/teheran.webp">
           <h4>Tehran</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/search/tekken" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/tekken.webp">
           <h4>Tekken Bloodline</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/4455/the-umbrella-academy/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/umbrella academy.webp">
           <h4>The umbrella academy</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/451107/the-lord-of-the-rings-the-rings-of-power/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/lotr.webp">
           <h4>The Lord of the rings</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/9855/the-boys/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/the boys.webp">
           <h4>The boys</h4>
         </a>
       </div>
-	       
+
       <div class="box">
         <a data-status="finished" data-day="friday" href="https://eztv.yt/shows/1342/the-expanse/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/the expanse.webp">
           <h4>The expanse</h4>
         </a>
@@ -744,62 +828,71 @@
 
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/463396/the-peripheral/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/the peripheal.webp">
           <h4>The peripheral</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="thursday" href="https://eztv.yt/shows/25836/the-mandalorian/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/mandalorian.webp">
           <h4>The mandalorian</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="thursday" data-status="running" data-day="thursday" href="https://eztv.yt/shows/405605/vikings-valhalla/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/vikings.webp">
           <h4>Vikings: Valhalla</h4>
         </a>
       </div>
-	        
+
       <div class="box">
         <a data-status="finished" data-day="friday" href="https://proxyrarbg.org/s/WandaVision/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/wanda vision.webp">
           <h4>Wanda Vision</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/1913/westworld/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/westworld.webp">
           <h4>Westworld</h4>
         </a>
       </div>
-	    
+
       <div class="box">
-        <a data-status="running" data-day="wednesday" href="https://eztv.yt/shows/474666/willow/" target="_blank">
+        <a data-status="running" data-day="wednesday" data-new="2022/12/1" href="https://eztv.yt/shows/474666/willow/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/willow.webp">
           <h4>Willow</h4>
         </a>
       </div>
-	     
+
       <div class="box">
         <a data-status="running" data-day="saturday" href="https://eztv.yt/shows/260081/yashahime-princess-half-demon/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/yashahime.webp">
           <h4>Yashahime</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="finished" data-day="thursday" href="https://eztv.yt/shows/4146/young-justice/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/young justice.webp">
           <h4>Young justice</h4>
         </a>
       </div>
-	    
+
       <div class="box">
         <a data-status="running" data-day="friday" href="https://eztv.yt/shows/2250/young-sheldon/" target="_blank">
+          <span class="notify-badge">NEW</span>
           <img src="images/young sheldon.webp">
           <h4>Young sheldon</h4>
         </a>
@@ -826,6 +919,7 @@
     <script>
 
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        const newBadgeDays = 21;
 
         document.getElementById("myInput").focus();
        // document.querySelector("button").focus();
@@ -834,8 +928,11 @@
       //  const ul = document.getElementById("myUL");
       //  const li = ul.getElementsByTagName('li');
         const li = document.querySelectorAll(".box");
+      //  const a = li[i].getElementsByTagName("a")[0];
+
         console.log(li);
-        var txtValue, a, i, day;
+        var txtValue,a, i, day;
+
 
 
         function myFunction() {
@@ -892,12 +989,39 @@
         }
 
         //////////////////////// chkEnded.checked == true show finished as well
-        console.log(chkEnded.checked);
+
+        //console.log(chkEnded.checked);
+        //const date = new Date(document.lastModified);
+        //console.log(date);
+
+        function checkNew(){
+          for (i = 0; i < li.length; i++) {
+
+            a = li[i].getElementsByTagName("a")[0];
+            addedDate = a.getAttribute("data-new");
+            console.log(addedDate);
+            if(addedDate == null){continue};
+
+          //  var date1 = new Date("2022/12/1");
+            var date1 = new Date(addedDate);
+            var Difference_In_Time = d.getTime() - date1.getTime();
+            var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+            if(Difference_In_Days < newBadgeDays){
+              li[i].querySelector('.notify-badge').style.display = "block";
+            }else{
+              li[i].querySelector('.notify-badge').style.display = "none";
+            }
+            console.log(Difference_In_Days)
+          }
+
+        }
 
 
-	    const d = new Date();
+	      const d = new Date();
         let currentDay = weekday[d.getDay()];
         filterByDay(currentDay);
+
+        checkNew();
 
         /*
         function openAllLinks(selectedDay){
