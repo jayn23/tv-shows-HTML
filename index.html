@@ -276,6 +276,14 @@
     display: none;
 }
 
+.boxs {
+  display: flex;
+  justify-content: space-between left;
+}
+
+.boxs .mycheckbox {
+  width:50px;
+}
 
 </Style>
 <body>
@@ -295,16 +303,24 @@
         <button onclick="filterByDay('Friday')">Friday</button>
         <button onclick="filterByDay('Saturday')">Saturday</button>
 
+		
         <a href="https://utweb.trontv.com/gui/index.html"  target="_blank"> <img src="images/utorrent-logo.png" alt=""> </a>
 
     </div>
+	
+	<div class="boxs">
+		<label>
+			<input class="mycheckbox" type="checkbox" id="chkEnded">
+			Include ended shows
+		</label>
+		
+		 <label>
+			<input class="mycheckbox" type="checkbox" id="chkNewOnly">
+			Show only new shows
+		</label>
+	</div>
 
-    <label>
-        <input class="mycheckbox" type="checkbox" id="chkEnded">
-        Include ended shows
-    </label>
-
-    <div class="show">
+   <div class="show">
 
       <div class="box">
         <a data-status="running" data-day="saturday" href="https://eztv.wf/shows/3037/a-discovery-of-witches/" target="_blank">
@@ -972,13 +988,13 @@
       </div>
 
    </div>
-
+   
     <div class="section">
 
            <a href="https://thepiratebay.org/index.html" target="_blank">The pirate bay</a>
            <a href="https://yts.mx/browse-movies" target="_blank">YTS MOVIES</a>
            <a href="https://ytstvmovies.xyz/series" target="_blank">YTS SERIES</a>
-           <a href="https://eztv.wf/showlist/" target="_blank">EZTV</a>
+           <a href="https://eztv.yt/showlist/" target="_blank">EZTV</a>
            <a href="https://rarbgtor.org/torrents.php" target="_blank">RARBAG</a>
 	         <a href="https://nyaa.si/?f=0&c=1_0&q=bleach" target="_blank">Nyaa</a>
            <a href="https://www.crunchyroll.com/" target="_blank">crunchyroll</a>
@@ -991,6 +1007,20 @@
 
     <script>
 
+
+
+
+	
+      //<div class="box">
+      //  <a data-status="running" data-day="saturday" href="https://eztv.yt/shows/3037/a-discovery-of-witches/" target="_blank">
+      //    <span class="notify-badge">NEW</span>
+      //    <img src="images/a discovary of witches.webp">
+      //    <h4>A discovery of witches</h4>
+      //  </a>
+      //</div>
+	  
+	  
+	  
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         const newBadgeDays = 21;
 
@@ -1016,6 +1046,7 @@
           for (i = 0; i < li.length; i++) {
             a = li[i].getElementsByTagName("a")[0];
             isRunning = a.getAttribute("data-status")
+			isNew = a.getAttribute("data-status")
             txtValue = a.textContent || a.innerText;
 
             if(chkEnded.checked){
@@ -1034,7 +1065,7 @@
           }
         }
 
-
+		
         function filterByDay(selectedDay){
 
             input.value = "";
@@ -1045,7 +1076,7 @@
            // a.getAttribute("data-day")
 
                 if(chkEnded.checked){
-                    if (a.getAttribute("data-day") === selectedDay.toLowerCase()) {
+                    if (a.getAttribute("data-status") === selectedDay.toLowerCase()) {
                     li[i].style.display = "";
                     } else {
                     li[i].style.display = "none";
@@ -1073,29 +1104,73 @@
             a = li[i].getElementsByTagName("a")[0];
             addedDate = a.getAttribute("data-new");
             console.log(addedDate);
-            if(addedDate == null){continue};
+			
+            if(addedDate == null) {
+			
+				if (chkNewOnly.checked){
+					li[i].style.display = "none";
+					}
+					
+				continue;
+			}
 
           //  var date1 = new Date("2022/12/1");
+	   
             var date1 = new Date(addedDate);
             var Difference_In_Time = d.getTime() - date1.getTime();
             var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+			
+		    if (chkNewOnly.checked){
+					li[i].style.display = "none";
+				}
+				
             if(Difference_In_Days < newBadgeDays){
               li[i].querySelector('.notify-badge').style.display = "block";
+				if (chkNewOnly.checked){
+					li[i].style.display = "";
+				}
+			  
             }else{
               li[i].querySelector('.notify-badge').style.display = "none";
-            }
+            }		
+			
             console.log(Difference_In_Days)
           }
 
         }
 
 
-	      const d = new Date();
+	    const d = new Date();
         let currentDay = weekday[d.getDay()];
         filterByDay(currentDay);
 
         checkNew();
+		
+		
+		const checkbox = document.getElementById('chkNewOnly')
 
+		checkbox.addEventListener('change', (event) => {
+		  if (event.currentTarget.checked) {
+			checkNew();
+		  } else {
+			myFunction();
+		  }
+		 }
+		)
+		
+		
+		const checkbox2 = document.getElementById('chkEnded')
+
+		checkbox2.addEventListener('change', (event) => {
+		  if (event.currentTarget.checked) {
+			myFunction();
+		  } else {
+			myFunction();
+		  }
+		 }
+		)
+		
+		
         /*
         function openAllLinks(selectedDay){
             var visibleElements = Array.from(document.querySelectorAll('li')).filter(s =>
