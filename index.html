@@ -293,11 +293,25 @@
 
 .boxs {
   display: flex;
-  justify-content: space-between left;
+  justify-content: space-between ;
+  margin-right: 40px;
 }
 
 .boxs .mycheckbox {
-  width:50px;
+  width: 30px;
+}
+
+.boxs .inner-box{
+  display: flex;
+  justify-content: left;
+}
+
+.boxs .inner-box label{
+  margin-right: 20px;
+}
+
+.boxs .number-label{
+  color: white;
 }
 
 </Style>
@@ -324,14 +338,20 @@
     </div>
 	
 	<div class="boxs">
-		<label>
-			<input class="mycheckbox" type="checkbox" id="chkEnded">
-			Include ended shows
-		</label>
-		
-		 <label>
-			<input class="mycheckbox" type="checkbox" id="chkNewOnly">
-			Show only new shows
+    <div class="inner-box">
+      <label>
+        <input class="mycheckbox" type="checkbox" id="chkEnded">
+        Include ended shows
+      </label>
+      
+      <label>
+        <input class="mycheckbox" type="checkbox" id="chkNewOnly">
+        Show only new shows
+      </label>
+    </div>
+
+     <label class="number-label">
+			Showing 25 of 50 shows
 		</label>
 	</div>
 
@@ -779,6 +799,15 @@
           <h4>Space Force</h4>
         </a>
       </div>
+
+      <div class="box">
+        <a data-status="running" data-day="wednesday" data-new="2023/06/21" href="https://eztv.wf/shows/535950/secret-invasion/" target="_blank">
+          <span class="notify-badge">NEW</span>
+          <img src="images/secret invasion.webp">
+          <h4>Secret invasion</h4>
+        </a>
+      </div>
+	
       <div class="box">
         <a data-status="finished" data-day="friday" href="https://eztv.wf/shows/23338/see/" target="_blank">
           <span class="notify-badge">NEW</span> <span class="notify-badge-season">NEW SEASON</span> 
@@ -1098,7 +1127,13 @@
 	  
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         const newBadgeDays = 21;
+<<<<<<< HEAD
         const newSeasonBadgeDays = 45;
+=======
+        var numberShowing = 0;
+        var numberTotal = 0;
+        
+>>>>>>> 106330d13480ffaa84ab163d481806a3fd4aabf5
 
         document.getElementById("myInput").focus();
        // document.querySelector("button").focus();
@@ -1109,9 +1144,12 @@
         const li = document.querySelectorAll(".box");
       //  const a = li[i].getElementsByTagName("a")[0];
 
+      
         console.log(li);
         var txtValue,a, i, day;
-
+        var divsArray = [].slice.call(li);
+        
+        numberTotal = divsArray.length;
 
 
         function myFunction() {
@@ -1122,7 +1160,7 @@
           for (i = 0; i < li.length; i++) {
             a = li[i].getElementsByTagName("a")[0];
             isRunning = a.getAttribute("data-status")
-			isNew = a.getAttribute("data-status")
+		      	isNew = a.getAttribute("data-status")
             txtValue = a.textContent || a.innerText;
 
             if(chkEnded.checked){
@@ -1139,6 +1177,7 @@
                 }
             }
           }
+          updateNumbers();
         }
 
 		
@@ -1166,6 +1205,7 @@
                 }
           }
           //openAllLinks(selectedDay)
+          updateNumbers();
         }
 
         //////////////////////// chkEnded.checked == true show finished as well
@@ -1227,6 +1267,7 @@
             console.log(Difference_In_Days)
           }
 
+          updateNumbers();
         }
 
 
@@ -1275,6 +1316,19 @@
             });
         }*/
 
+        
+       
+         function updateNumbers(){
+    
+            showArray = divsArray.filter(function(el) {
+                return getComputedStyle(el).display !== "none"
+            });
+
+            numberShowing = showArray.length;
+        
+            const numberLabel = document.querySelector(".number-label");
+            numberLabel.textContent = `Showing ${numberShowing} of ${numberTotal} shows`;
+          }
 
         </script>
 </body>
