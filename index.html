@@ -11,8 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
+     <!-- Font Awesome icons (free version)-->
+     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+
 </head>
 <Style>
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&family=Lato&family=Montserrat&family=Readex+Pro&family=Roboto&display=swap');
 
@@ -323,7 +327,8 @@
             <!--<a href="">X</a>-->
         </span>
 
-        <button onclick="myFunction()">All</button>
+        <button onclick="ToggleInputLanguageCharacters()"><i class="fas fa-globe"></i></button>
+        <button onclick="clearSearch()">All</button>
         <button onclick="filterByDay('Sunday')">Sunday</button>
         <button onclick="filterByDay('Monday')">Monday</button>
         <button onclick="filterByDay('Tuesday')">Tuesday</button>
@@ -1310,6 +1315,10 @@
         
         numberTotal = divsArray.length;
 
+        function clearSearch(){
+          input.value = "";
+          myFunction();
+        }
 
         function myFunction() {
 
@@ -1488,6 +1497,32 @@
             const numberLabel = document.querySelector(".number-label");
             numberLabel.textContent = `Showing ${numberShowing} of ${numberTotal} shows`;
           }
+
+
+          let toHebrew = false
+        
+        function ToggleInputLanguageCharacters() {
+        
+            const arrayEnglish = ["e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "z", "x", "c", "v", "b", "n", "m", ","]
+            const arrayHebrew = ["ק", "ר", "א", "ט", "ו", "ן", "ם", "פ", "ש", "ד", "ג", "כ", "ע", "י", "ח", "ל", "ך", "ף", "ז", "ס", "ב", "ה", "נ", "מ", "צ", "ת"]
+        
+            var textToChange = input.value.toLowerCase()
+        
+            for (i = 0; i < arrayEnglish.length; i++) {
+        
+                if (toHebrew) {
+                  textToChange = textToChange.replaceAll(arrayEnglish[i], arrayHebrew[i]);
+                } else {
+                  textToChange = textToChange.replaceAll(arrayHebrew[i], arrayEnglish[i]);
+                }
+        
+            }
+        
+            input.value = textToChange
+            myFunction();
+
+            toHebrew = !toHebrew;
+        }
 
         </script>
 </body>
