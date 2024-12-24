@@ -1370,9 +1370,31 @@
         const input = document.getElementById('myInput');
       //  const ul = document.getElementById("myUL");
       //  const li = ul.getElementsByTagName('li');
-        const li = document.querySelectorAll(".box");
+       
+      
+   ///   const li = document.querySelectorAll(".box");
       //  const a = li[i].getElementsByTagName("a")[0];
 
+
+
+      // Select all the elements with the class "box"
+      let li = Array.from(document.querySelectorAll('.box'));
+
+      // Sort the elements by the inner text of their <h4> element
+      li.sort((a, b) => {
+          let textA = a.querySelector('h4').innerText;
+          let textB = b.querySelector('h4').innerText;
+          return textA.localeCompare(textB);  // Use localeCompare for alphabetical sorting
+      });
+
+
+      // Append the sorted elements back to the body (or another container)
+      let body = document.querySelector('.show');
+      li.forEach(element => {
+          body.appendChild(element);  // Re-append each element in the sorted order
+      });
+
+	
       
         console.log(li);
         var txtValue,a, i, day;
