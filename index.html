@@ -947,7 +947,7 @@
         </a>
       </div>
       <div class="box">
-        <a data-status="running" data-day="thursday" href="https://eztv.wf/shows/300795/star-trek-strange-new-worlds/" target="_blank">
+        <a data-status="running" data-day="thursday" new-season="2025/07/24" href="https://eztv.wf/shows/300795/star-trek-strange-new-worlds/" target="_blank">
           <span class="notify-badge">NEW</span> <span class="notify-badge-season">NEW SEASON</span> 
           <img src="images/star trek strange new worlds.webp">
           <h4>Star trek strange new worlds</h4>
@@ -1267,7 +1267,7 @@
       </div>
 
         <div class="box">
-        <a data-status="running" data-day="thursday" data-new="2024/07/24" href="https://eztv.wf/shows/451171/the-sandman/" target="_blank">
+        <a data-status="running" data-day="thursday" data-new="" new-season="2025/07/24" href="https://eztv.wf/shows/451171/the-sandman/" target="_blank">
           <span class="notify-badge">NEW</span> 
           <span class="notify-badge-season">NEW SEASON</span> 
           <img src="images/the-sandman.webp">
@@ -1559,16 +1559,25 @@
                   li[i].style.display = "";
                 }
                 
-              }else if (Difference_In_Days2 < newSeasonBadgeDays) {
+              }else{
+              li[i].querySelector('.notify-badge').style.display = "none";
+            }		
 
-                li[i].querySelector('.notify-badge-season').style.display = "block";
+         
+            if (Difference_In_Days2 < newSeasonBadgeDays) {
+
+              li[i].querySelector('.notify-badge-season').style.display = "block";
+
+                if (chkNewOnly.checked){
+                  li[i].style.display = "";
+                }
 
             }else{
-              li[i].querySelector('.notify-badge').style.display = "none";
               li[i].querySelector('.notify-badge-season').style.display = "none";
-            }		
-			
-            console.log(Difference_In_Days)
+            }	
+
+
+           // console.log(Difference_In_Days)
           }
 
           updateNumbers();
